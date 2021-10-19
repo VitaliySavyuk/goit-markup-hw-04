@@ -8,6 +8,7 @@
   --background-color: #2f303a;
   --button-background: #f5f4fa;
   --hero-button-background: #188ce8;
+  --icon-color: #afb1b8;
   --card-border: #eeeeee;
   --flex-top: 30px;
   --flex-left: 30px;
@@ -173,14 +174,43 @@ header .container {
 
 /* Контакты */
 
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .contacts-item:not(:last-child) {
   margin-right: 50px;
+}
+
+.contacts-item:hover .contacts-picture-svg {
+  fill: var(--brand-text-color);
+}
+
+.contacts-picture-svg {
+  fill: var(--secondary-text-color);
+  margin-right: 10px;
 }
 
 /* Герой */
 
 .hero {
+  width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--background-color);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   padding: 200px 0;
 }
 
@@ -223,6 +253,31 @@ header .container {
 }
 
 /* Секция преимущества */
+
+/* .position-list {
+  display: flex;
+}
+
+.benefit-item-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.demonstration {
+  width: 270px;
+  height: 120px;
+  background-size: cover;
+  background-color: var(--button-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.benefit-icon {
+  border-radius: 4px;
+}
 
 .benefit-item-title {
   font-style: normal;
@@ -286,6 +341,94 @@ header .container {
   line-height: 1.18;
   text-align: center;
   color: var(--secondary-text-color);
+  margin-bottom: 16px;
+}
+
+.social-block {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.social-item-block {
+  margin-right: 10px;
+}
+
+.social-item-block:last-child {
+  margin-right: 0;
+}
+
+.social-link {
+  display: flex;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  color: var(--icon-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.social-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  fill: var(--icon-color);
+}
+
+.social-icon:focus,
+.social-icon:hover {
+  fill: var(--main-lite-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--brand-text-color);
+  fill: var(--main-lite-color);
+}
+
+/*Клиенты*/
+
+.clients-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-title {
+  padding-top: 94px;
+}
+
+.clients-item {
+  display: flex;
+  padding-bottom: 94px;
+}
+
+.clients-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-svg {
+  fill: var(--icon-color);
+}
+
+.clients-svg:hover,
+.clients-svg:focus {
+  fill: var(--brand-text-color);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border: 1px solid var(--brand-text-color);
 }
 
 /* Подвал */
@@ -327,6 +470,67 @@ header .container {
 .link-footer:hover,
 .link-footer:focus {
   color: var(--brand-text-color);
+}
+
+/*Social footer*/
+
+.footer-b {
+  display: block;
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-lite-color);
+}
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.foot-social-box {
+  align-items: baseline;
+  text-align: left;
+}
+
+.footer-social-list {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-social-link {
+  display: flex;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--brand-text-color);
+}
+
+.footer-icon-svg {
+  fill: var(--main-lite-color);
+}
+
+.footer-social-item {
+  list-style-type: none;
+}
+
+.logo-address-box {
+  margin-right: 70px;
 }
 
 /* Портфолио */
@@ -398,4 +602,10 @@ header .container {
 .portfolio-title-text {
   font-size: 16px;
   line-height: 1.87;
+}
+
+.project-content:hover,
+.project-content:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
